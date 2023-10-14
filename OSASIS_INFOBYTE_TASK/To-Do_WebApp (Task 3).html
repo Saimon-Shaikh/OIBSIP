@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Skranji:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400&display=swap" rel="stylesheet">
+    <title>Task 3 : (To-Do WebApp)</title>
+    <title>To-Do WebApp using HTML, CSS and Javascript</title>
+    <style>
+        body{
+            background-color: orange;
+            margin: 0;
+        }
+        .head{
+            margin: 0;
+            padding: 1px;
+            color: rgb(255, 251, 251);
+            font-size: 25px;
+            width: 100%;  
+            text-align: center;
+            font-family: 'Skranji', cursive;
+            background-color: black;
+        }
+
+        .cont{
+            width: 100%;
+            margin-top:35px;
+            display: inline-flex;
+        }
+
+        .side1{
+            margin-left: 3cm;
+            margin-top: 20px;
+            width: 40%;
+        }
+        .side2{
+            margin-right: 3cm;
+            width: 60%;
+        }
+        form{
+            margin: 15px;
+            padding: 10px;
+            max-width: 90%;
+            background-color: rgb(230, 230, 230);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #etitle,#edes,#submit{
+            margin: 5px;
+            padding: 10px;
+            width: 80%;
+            font-size: 30px;
+            border-radius: 5px;
+        }
+        
+        #edes{
+            height: 9cm;
+        }
+
+        #submit{
+            background-color: rgb(76, 163, 76);
+            color: white;
+            width: 83%;
+        }
+        #submit:hover{
+            background-color: rgb(85, 184, 85);
+        }
+        #submit:active {
+        background-color: rgb(121, 212, 121);
+        transform: translateY(1px);
+        }
+
+        form h2{
+            margin: 0;
+            padding: 5px;
+            font-size: 40px;
+            font-family: 'Teko', sans-serif;
+        }
+
+        .part{
+            margin: 0 10px 0 10px;
+            padding: 0.5px;
+            border: solid black;
+            border-radius: 5px;
+            background-color: black;
+            width: 97%;
+        }
+
+        .side2{
+            border: solid rgb(84, 83, 83);
+            background-color: whitesmoke;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        ul{
+            margin-right: 35px;
+        }
+        ul li{
+            list-style: none;
+            font-size: 30px;
+            padding: 20px 11px 20px 65px;
+            cursor: pointer;
+            position: relative;
+            border: solid #656565;
+            border-radius: 10px;
+            margin: 8px;
+        }
+
+        ul li::before{
+            content: '';
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-size: cover;
+            border: solid rgb(50, 184, 81);
+            top: 20px;
+            left: 13px;
+        }
+
+        ul li.comp{
+            color:#858585;
+            text-decoration: line-through;
+            background-color: rgb(57, 243, 91);
+        }
+
+        ul li.comp::before{
+            background-image: url("https://cdn-icons-png.flaticon.com/512/5610/5610944.png");
+        }
+
+        ul li .deletebutton{
+            float: right;
+            margin-right: 10px;
+            right: 0;
+            top: 20px;
+            bottom: 15px;
+            width: 50px;
+            height: 50px;
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+            line-height: 40px;
+            text-align: center;
+            justify-content: center;
+            font-weight: 700;
+            border-radius:50%;
+        }
+        ul li .deletebutton:active{
+            color: rgb(238, 123, 123);
+        }
+
+        ul li .editbutton{
+            float: right;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            margin-right:20px;
+            color: black;
+            background-color: yellow;
+            text-align: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        .taskt{
+            margin-left: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 28px;
+        }
+
+        .taskdate{
+            width: 55px;
+            height: 55px;
+            float: right;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h1>#To-Do List Web App#</h1>
+        </div>
+    </header>
+    <div class="cont">
+        <div class="side1">
+            <form id="newtaskform">
+                <h2>Add to the List</h2>
+                <input type="text" id="etitle" placeholder="Title" required>
+                <br>
+                <textarea id="edes" placeholder="Description..."></textarea>
+                <br>
+                <button type="submit" onclick="addTask()" id="submit">Add</button>
+            </form>
+        </div>
+        <div class="side2">
+            <div class="opt"></div>
+            <h2 class="taskt">Pending Tasks</h2>
+            <div class="part"></div>
+                <div class="lis">
+                    <ul id="list-container">
+                    </ul>
+                    <h2 class="taskt">Completed Tasks</h2>
+                    <div class="part"></div>
+                    <ul id="completed-list">
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var etitle = document.getElementById("etitle");
+        var edes = document.getElementById("edes");
+        var submit = document.getElementById("submit");
+        var listContainer = document.getElementById("list-container");
+        var completedList = document.getElementById("completed-list");
+
+
+        function addTask() {
+            event.preventDefault();
+            var li = document.createElement("li");
+            var date = new Date();
+            var dateTime = date.toLocaleString();
+            li.textContent = etitle.value + ": " + edes.value + " (" + dateTime + ")";
+            listContainer.appendChild(li);
+            etitle.value = "";
+            edes.value = "";
+            li.addEventListener("click", function() {
+            li.classList.toggle("comp");
+                if (li.classList.contains("comp")) {
+                completedList.appendChild(li);
+                editButton.disabled = true;
+                }
+                else {
+                    listContainer.appendChild(li);
+                    editButton.disabled = false;
+                }
+            });
+
+            var deleteButton = document.createElement("button");
+            deleteButton.className = "deletebutton";
+            deleteButton.innerHTML = "\u00d7";
+            li.appendChild(deleteButton);
+            deleteButton.addEventListener("click", function() {
+                li.parentElement.remove(li.appendChild);
+            });
+
+            var editButton = document.createElement("button");
+            editButton.innerHTML = "&#9998";
+            editButton.className = "editbutton";
+            li.appendChild(editButton);
+            editButton.addEventListener("click", function() {
+                var newTitle = prompt("Enter a new Title for the task:");
+                var newDes = prompt("Enter a new Description for the task:");
+                if (newTitle && newDes) {
+                date = new Date();
+                dateTime = date.toLocaleString();
+                li.textContent = newTitle + ": " + newDes + " (" + dateTime + ")";
+            li.appendChild(deleteButton);
+            li.appendChild(editButton);
+            }
+            });
+        }
+    </script>
+</body>
+</html>

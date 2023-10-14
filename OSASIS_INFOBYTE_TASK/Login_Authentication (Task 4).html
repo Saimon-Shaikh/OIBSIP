@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+
+    <title> Task 4 : (LOGIN AUTHENTICATION)</title>
+    <title> LOGIN AUTHENTICATION Page using HTML, CSS and Javascript</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/premium-vector/futuristic-background-style_23-2148503794.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            width:600px;
+            margin: 10% auto;
+            text-align: center;
+            border: solid rgb(56, 56, 56);
+            border-radius: 15px;
+            background-color: rgb(8, 8, 8);
+            color:rgb(227, 224, 224);
+            box-shadow: 0px 0px 4px lightyellow,0px 0px 8px lightyellow,0px 0px 12px lightyellow;
+            }
+
+        h1 {
+            font-size: 50px;
+            font-family: 'Titan One', sans-serif;
+        }
+
+        .form-group {
+            margin: 25px 0;
+            font-family: 'Gabarito', sans-serif;
+        }
+
+        label {
+            font-size: 28px;
+        }
+
+        input {
+            width: auto;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #04AA6D;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        p{
+            font-family: Arial, sans-serif;
+            font-size: 26px;
+        }
+
+        a{
+            color: blue;
+        }
+
+        a:hover{
+            color:rgb(113, 113, 242) ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form id="login-form" action="secured.html" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="login-button">Login</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <script>
+        var users = [
+            {username: "admin", password: "admin123"},
+            {username: "user", password: "user123"},
+        ];
+
+        var loginForm = document.getElementById("login-form");
+        var usernameInput = document.getElementById("username");
+        var passwordInput = document.getElementById("password");
+        var loginButton = document.getElementById("login-button");
+
+
+        loginButton.addEventListener("click", function(event) {
+
+            event.preventDefault();
+            var username = usernameInput.value.trim();
+            var password = passwordInput.value.trim();
+
+            if (username === "" || password === "") {
+                alert("Please enter your username and password");
+                return;
+            }
+    
+            var userFound = false; 
+            for (var i = 0; i < users.length; i++) {
+        
+            if (users[i].username === username && users[i].password === password) {
+                userFound = true; 
+                break; 
+                }
+            }
+    
+            if (userFound) {
+                window.location.href = ("Secure_page.html"); 
+            } else {
+                alert("Invalid username or password");
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

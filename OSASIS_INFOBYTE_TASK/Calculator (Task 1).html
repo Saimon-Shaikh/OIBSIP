@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&family=Teko&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+
+    <title>Task 1: Calculator</title>
+    <title>Calculator using HTML, CSS and Javascript</title>
+    <style>
+        body{
+            background-color: rgb(8, 131, 149);
+        }
+
+        .tilte{
+            text-align: center;
+            justify-content: center;
+            font-size: 55px;
+            font-family: 'Croissant One', cursive;
+        }
+
+        .calcultor{
+            display:flex;
+            flex-direction:column;
+            border: 3px solid black;
+            margin: 0.5% 38% 3% 38%;
+            padding: 25px;
+            border-radius: 15px;
+            background-color:rgb(53, 47, 68);
+        }
+
+        .display{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .display .dis{
+            padding: 40px 10px;
+            width: 349px;
+            border-radius: 9px;
+            border: 2px solid black;
+            font-size: 32px;
+            font-family: 'Teko', sans-serif;
+            background-color:rgb(240, 240, 240);
+        }
+
+        .ans{
+            margin: -50px 36% 15px 54%;
+            width: 4cm;
+            display:grid ;
+            position: relative;
+            font-size: 30px;
+            font-family: 'Teko', sans-serif;
+            background-color:rgb(240, 240, 240);
+            border: none;
+        }
+
+        .buttonarea{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button{
+            margin: 0px 5px 5px 5px;
+            padding: 20px 46px 12px 35px;
+            border: 2px solid black;
+            border-radius: 10px;
+            max-width: 20px;
+            cursor: pointer;
+            font-size: 25px;
+            font-family: 'Fjalla One', sans-serif;
+            background-color: rgb(226, 223, 223);
+        }
+
+        button:hover{
+            background-color: rgb(196, 195, 195);
+        }
+
+        
+
+        #ac{
+            padding: 18px 52px 14px 29px;
+            background-color: rgb(255, 132, 0);
+            color: aliceblue;
+        }
+
+        #operation{
+            padding: 18px 46px 14px 30px;
+            background-color: rgb(255, 132, 0);
+            color: aliceblue;
+            font-size: 30px;
+        }
+        #operation:hover,#ac:hover{
+            background-color: rgb(255, 176, 0)
+        }
+
+        @media only screen and (max-width:907px){
+            .calcultor{
+                margin: 2% 24% 3% 24%;
+            }
+        }
+
+        @media only screen and (max-width:800px){
+            .calcultor{
+                margin: 2% 27% 3% 27%;
+            }
+            .display .dis{
+            padding: 10px 10px;
+            width: 270px;
+            font-size: 20px;
+        }
+        .ans{
+            margin: -30px 30% 15px 60%;
+            width: 2cm;
+            font-size: 15px;
+        }
+        button{
+            margin: 0px 3px 3px 3px;
+            padding: 10px 36px 2px 25px;
+            max-width: 30px;
+        }
+        #ac{
+            padding: 10px 42px 6px 19px;
+            font-size: 20px;
+        }
+
+        #operation{
+            padding: 10px 42px 6px 19px;
+            font-size: 20px;
+        }
+        }
+
+        @media only screen and (max-width:480px){
+            .tilte{
+                font-size: 30px;
+                margin: 5px 45px 5px 15px;
+            }
+            .calcultor{
+                margin: 4% 20% 2% 5%;
+                padding:5px;
+            }
+            .display .dis{
+            padding: 5px ;
+            width: 255px;
+            font-size: 20px;
+        }
+        .ans{
+            margin: -30px 30% 15px 60%;
+            width: 2cm;
+            font-size: 18px;
+        }
+        button{
+            margin: 0px 1px 3px 1px;
+            padding: 8px 34px 1px 23px;
+            max-width: 30px;
+        }
+    }
+
+        
+    </style>
+</head>
+<body>
+    <div class="tilte">
+        <h1>Calcultor</h1>
+    </div>
+
+    <div class="calcultor">
+        <div class="display">
+            <input class="dis" type="text/number">
+            <input class="ans" type="text/number">
+        </div>
+        <div class="buttonarea">
+            <div class="row">
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+                <button class="button" id="operation">*</button>
+            </div>
+            <div class="row">
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+                <button class="button" id="operation">-</button>
+            </div>
+            <div class="row">
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button" id="operation">+</button>
+            </div>
+            <div class="row">
+                <button class="button" id="ac">AC</button>
+                <button class="button">0</button>
+                <button class="button" id="operation">.</button>
+                <button class="button" id="operation">/</button>
+            </div>
+            <button class="button" id="operation">=</button>
+        </div>
+    </div>
+
+    <script>
+        let string = "";
+        let buttons = document.querySelectorAll('.button');
+        Array.from(buttons).forEach((button)=>{
+            button.addEventListener('click', (e)=>{
+                try{
+                if(e.target.innerHTML == '='){
+                    string = eval(string);
+                    document.querySelector('.ans').value = string;
+                }
+                else if(e.target.innerHTML == 'AC'){
+                    string = "";
+                    document.querySelector('input').value = string;
+                    document.querySelector('.ans').value = string;
+                }
+                else{
+                console.log(e.target)
+                string = string + e.target.innerHTML;
+                document.querySelector('input').value = string;
+                }}
+                catch(error){
+                    console.log(error);
+                    string = "Error... Click AC to clear";
+                    document.querySelector('input').value = string;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

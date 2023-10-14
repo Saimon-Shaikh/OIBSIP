@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Task 2:(Tribute Page)</title>
+    <title>Tribute Page using HTML and CSS</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        background-color: rgb(235, 228, 209);
+    }
+    .container{
+        margin: 60px 40px 44px 30px;
+        padding: 20px;
+        display: flex;
+        text-align: center;
+    }
+    .title{
+        width: 50%;
+        margin-left: 100px;
+        padding-top: 160px;
+        padding-left: 40px;
+        padding-right:0;
+        margin-right: 0;
+    }
+    .image{
+        margin-left: 0;
+        padding-left: 0;
+        width: 50%;
+        padding: 50px 10px 10px 10px;
+    }
+    #Nikolaimage{
+        border-radius: 49%;
+        border: solid rgb(39, 38, 38) 8px;
+        height: 18cm;
+    }
+    #name{
+        font-size: 65px;
+        font-family: 'Young Serif', serif;
+    }
+    #date{
+        font-size: 25px;
+        font-family: 'Gabarito', cursive;
+    }
+    #quote{
+        text-align: justify;
+        text-justify:newspaper;
+        font-size: 30px;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    #sign{
+        padding-top: 20px;
+        height: 1.5cm;
+        width: auto;
+    }
+
+    #line{
+        margin: 0;
+        border: solid rgb(72, 72, 72) 2px;
+        background-color: rgb(72, 72, 72);
+        padding: 2px;
+    }
+
+    .endline{
+        margin: 0 0 10px 0;
+        background-color: black;
+        border: solid rgb(75, 75, 75);
+    }
+
+    .details{
+        margin: 20px;
+        text-align: justify;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 25px;
+    }
+
+    .paraimage{
+        width: 25%;
+        height: 320px;
+        border: solid rgb(110, 110, 110);
+        border-radius: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .underline{
+        font-size: 30px;
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1 id="name">Nikola Tesla</h1>
+            <h4 id="date"> (10 July 1856 - 7 January 1943) </h4>
+            <h2 id="quote">"Let the future tell the truth and evaluate each one according to his work and accomplishments. The present is theirs; the future, for which I have really worked, is mine.The scientists of today think deeply instead of clearly. One must be sane to think clearly, but one can think deeply and be quite insane."</h2>
+        </div>
+        <div class="image">
+            <img id="Nikolaimage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Tesla_circa_1890.jpeg/800px-Tesla_circa_1890.jpeg" alt="Error">
+            <img id="sign" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Nikola_Tesla_signature_1900.svg/225px-Nikola_Tesla_signature_1900.svg.png" alt="Error">
+        </div>
+    </div>
+
+    <div id="line"></div>
+
+    <div class="details" id="intro">
+        <p>Nikola Tesla (10 July 1856 – 7 January 1943) was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system.</p>
+    </div>
+
+    <div class="details" id="para">
+        <h4 class="underline">Early Years</h4>
+        <p>Nikola completed primary school, followed by middle school in Smiljan where he studied German, arithmetic, and religion.. In 1870, Tesla moved to Karlovacto to attend high school at the Higher Real Gymnasium where the classes were held in German, as was usual throughout schools within the Austro-Hungarian Military Frontier.</p>
+
+        <img class="paraimage" id="Nikolaimage2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tesla_1879_teslauniverse.jpg/330px-Tesla_1879_teslauniverse.jpg" alt="Error">
+
+        <p>Tesla later wrote that he became interested in demonstrations of electricity by his physics professor. Tesla noted that these demonstrations of this "mysterious phenomena" made him want "to know more of this wonderful force". Tesla was able to perform integral calculus in his head, which prompted his teachers to believe that he was cheating. He finished a four-year term in three years, graduating in 1873.</p>
+
+        <p>He enrolled at the Imperial-Royal Technical College in Graz in 1875 on a Military Frontier scholarship. In his autobiography Tesla said he worked hard and earned the highest grades possible, passed nine exams(nearly twice as many as required) and received a letter of commendation from the dean of the technical faculty to his father, which stated, "Your son is a star of first rank." At Graz, Tesla noted his fascination with the detailed lectures on electricity presented by Professor Jakob Pöschl and described how he made suggestions on improving the design of an electric motor the professor was demonstrating. But by his third year he was failing in school and never graduated, leaving Graz in December 1878.</p>
+
+        <p>In 1884, Edison manager Charles Batchelor, who had been overseeing the Paris installation, was brought back to the United States to manage the Edison Machine Works, a manufacturing division situated in New York City, and asked that Tesla be brought to the United States as well.</p>
+
+        <img class="paraimage" id="collegeimage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Edison_machine_works_goerck_street_new_york_1881.png/330px-Edison_machine_works_goerck_street_new_york_1881.png" alt="Error">
+
+        <p>Soon after leaving the Edison company, Tesla was working on patenting an arc lighting system, possibly the same one he had developed at Edison. In March 1885, he met with patent attorney Lemuel W. Serrell, the same attorney used by Edison, to obtain help with submitting the patents. Serrell introduced Tesla to two businessmen, Robert Lane and Benjamin Vail, who agreed to finance an arc lighting manufacturing and utility company in Tesla's name, the Tesla Electric Light and Manufacturing Company. Tesla worked for the rest of the year obtaining the patents that included an improved DC generator, the first patents issued to Tesla in the US, and building and installing the system in Rahway, New Jersey. Tesla's new system gained notice in the technical press, which commented on its advanced features.</p>
+
+        <h4 class="underline">AC and the induction motor</h4>
+        <p>In 1887, Tesla developed an induction motor that ran on alternating current (AC), a power system format that was rapidly expanding in Europe and the United States because of its advantages in long-distance, high-voltage transmission. The motor used polyphase current, which generated a rotating magnetic field to turn the motor (a principle that Tesla claimed to have conceived in 1882). This innovative electric motor, patented in May 1888, was a simple self-starting design that did not need a commutator, thus avoiding sparking and the high maintenance of constantly servicing and replacing mechanical brushes.</p>
+
+        <img class="paraimage" id="acimage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOosI6ugFqhqSRTtAU3v1Hmw2KCdmPZWTfu5B9ShIew&s" alt="Error">
+
+        <p>During that year, Tesla worked in Pittsburgh, helping to create an alternating current system to power the city's streetcars. He found it a frustrating period because of conflicts with the other Westinghouse engineers over how best to implement AC power. Between them, they settled on a 60-cycle AC system that Tesla proposed (to match the working frequency of Tesla's motor), but they soon found that it would not work for streetcars, since Tesla's induction motor could run only at a constant speed. They ended up using a DC traction motor instead.
+        </p>
+
+        <p>In the summer of 1889, Tesla travelled to the 1889 Exposition Universelle in Paris and learned of Heinrich Hertz's 1886–1888 experiments that proved the existence of electromagnetic radiation, including radio waves. Tesla found this discovery "refreshing" and decided to explore it more fully.[citation needed] In repeating and then expanding on these experiments Tesla tried powering a Ruhmkorff coil with a high-speed alternator he had been developing as part of an improved arc lighting system but found that the high-frequency current overheated the iron core and melted the insulation between the primary and secondary windings in the coil. To fix this problem Tesla came up with his "oscillating transformer", with an air gap instead of insulating material between the primary and secondary windings and an iron core that could be moved to different positions in or out of the coil. Later called the Tesla coil, it would be used to produce high-voltage, low-current, high-frequency alternating-current electricity. He would use this resonant transformer circuit in his later wireless power work.</p>
+
+        <p>From the 1890s through 1906, Tesla spent a great deal of his time and fortune on a series of projects trying to develop the transmission of electrical power without wires. It was an expansion of his idea of using coils to transmit power that he had been demonstrating in wireless lighting. He saw this as not only a way to transmit large amounts of power around the world but also, as he had pointed out in his earlier lectures, a way to transmit worldwide communications.
+        </p>
+
+        <p>After Wardenclyffe closed, Tesla continued to write to Morgan; after "the great man" died, Tesla wrote to Morgan's son Jack, trying to get further funding for the project. In 1906, Tesla opened offices at 165 Broadway in Manhattan, trying to raise further funds by developing and marketing his patents. He went on to have offices at the Metropolitan Life Tower from 1910 to 1914; rented for a few months at the Woolworth Building, moved out because he could not afford the rent; and then to office space at 8 West 40th Street from 1915 to 1925. After moving to 8 West 40th Street, he was effectively bankrupt. Most of his patents had run out and he was having trouble with the new inventions he was trying to develop.</p>
+
+        <img class="paraimage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Room3327HotelNewYorker.jpg/330px-Room3327HotelNewYorker.jpg" alt="Error">
+
+        <p>On 7 January 1943, at the age of 86, Tesla died alone in Room 3327 of the Hotel New Yorker. His body was found by maid Alice Monaghan when she entered Tesla's room, ignoring the "do not disturb" sign that Tesla had placed on his door two days earlier. Assistant medical examiner H.W. Wembley examined the body and ruled that the cause of death had been coronary thrombosis (a type of heart attack).</p>
+    </div>
+    <div class="endline"></div>
+</body>
+</html>
